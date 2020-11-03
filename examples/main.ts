@@ -1,7 +1,10 @@
 import '@babel/polyfill'
-import { createApp } from 'vue'
+import { createApp, version } from 'vue'
 
 import App from './App.vue'
+
+// eslint-disable-next-line no-console
+console.log('Vue version: ', version)
 
 const app = createApp(App)
 

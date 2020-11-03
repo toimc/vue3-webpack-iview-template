@@ -1064,7 +1064,7 @@
     "@types/source-list-map" "*"
     source-map "^0.7.3"
 
-"@types/webpack@^4.41.8":
+"@types/webpack@^4.4.31", "@types/webpack@^4.41.8":
   version "4.41.24"
   resolved "https://registry.npm.taobao.org/@types/webpack/download/@types/webpack-4.41.24.tgz?cache=0&sync_timestamp=1603911042439&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40types%2Fwebpack%2Fdownload%2F%40types%2Fwebpack-4.41.24.tgz#75b664abe3d5bcfe54e64313ca3b43e498550422"
   integrity sha1-dbZkq+PVvP5U5kMTyjtD5JhVBCI=
@@ -2227,6 +2227,14 @@ clean-css@^4.2.3:
   integrity sha1-UHtd59l7SO5T2ErbAWD/YhY4D3g=
   dependencies:
     source-map "~0.6.0"
+
+clean-webpack-plugin@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/clean-webpack-plugin/download/clean-webpack-plugin-3.0.0.tgz#a99d8ec34c1c628a4541567aa7b457446460c62b"
+  integrity sha1-qZ2Ow0wcYopFQVZ6p7RXRGRgxis=
+  dependencies:
+    "@types/webpack" "^4.4.31"
+    del "^4.1.1"
 
 cli-cursor@^2.1.0:
   version "2.1.0"
@@ -7673,6 +7681,11 @@ vue-loader@^16.0.0-beta.9:
     chalk "^4.1.0"
     hash-sum "^2.0.0"
     loader-utils "^2.0.0"
+
+vue-router@^4.0.0-rc.1:
+  version "4.0.0-rc.1"
+  resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-4.0.0-rc.1.tgz#42f41315849163a1243886c9aa6d7c14f24fd003"
+  integrity sha1-QvQTFYSRY6EkOIbJqm18FPJP0AM=
 
 vue-style-loader@^4.1.2:
   version "4.1.2"

@@ -4,9 +4,10 @@ const VueLoaderPlugin = require('vue-loader/dist/plugin').default
 const WebpackBar = require('webpackbar')
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 function resolve (dir) {
-  return path.join(__dirname, '.', dir)
+  return path.join(__dirname, dir)
 }
 
 module.exports = {
@@ -17,13 +18,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(vue|md)$/,
-        loader: 'vue-loader',
-        exclude: /\.(en-US.md|zh-CN.md)$/
-      },
-      {
-        test: /\.(en-US.md|zh-CN.md)$/,
-        use: [{ loader: 'vue-loader' }, { loader: './loader.js' }]
+        test: /\.vue$/,
+        loader: 'vue-loader'
       },
       {
         test: /\.tsx?$/,
@@ -32,7 +28,10 @@ module.exports = {
             loader: 'babel-loader'
           },
           {
-            loader: 'ts-loader'
+            loader: 'ts-loader',
+            options: {
+              onlyCompileBundledFiles: true
+            }
           }
         ],
         exclude: /node_modules/
@@ -82,6 +81,14 @@ module.exports = {
         ]
       },
       {
+        test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
+        loader: 'url-loader?limit=8192'
+      },
+      {
+        test: /\.(html|tpl)$/,
+        loader: 'html-loader'
+      },
+      {
         test: /\.css$/,
         use: [
           {
@@ -97,7 +104,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '@': resolve('src')
+      '@': resolve('src'),
+      vue$: 'vue/dist/vue.esm-bundler.js'
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue', '.md']
   },
@@ -115,7 +123,7 @@ module.exports = {
     chunks: false,
     chunkModules: false
   },
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'eval-source-map',
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].css'
@@ -126,6 +134,7 @@ module.exports = {
       inject: true
     }),
     new VueLoaderPlugin(),
-    new WebpackBar()
+    new WebpackBar(),
+    new CleanWebpackPlugin()
   ]
 }

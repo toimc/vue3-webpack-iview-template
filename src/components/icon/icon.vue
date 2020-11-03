@@ -1,5 +1,5 @@
 <template>
-  <i :class="classes" :style="styles" @click="handleClick"></i>
+  <i :class="state.classes" :style="state.styles" @click="handleClick"></i>
 </template>
 
 <script lang="ts">

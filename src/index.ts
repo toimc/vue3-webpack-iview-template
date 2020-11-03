@@ -1,11 +1,12 @@
+/* eslint-disable import/no-named-default */
 import { App } from 'vue'
 
 import version from './version'
 
-import { Icon } from './components/icon'
+import { default as Button } from './components/button'
 
 const components = [
-  Icon
+  Button
 ]
 
 const install = function (app: App) {
@@ -19,7 +20,7 @@ const install = function (app: App) {
 export {
   version,
   install,
-  Icon
+  Button
 }
 
 export default {
