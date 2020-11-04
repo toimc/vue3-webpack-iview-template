@@ -1,4 +1,4 @@
-import '@babel/polyfill'
+// import '@babel/polyfill'
 import { createApp, version } from 'vue'
 
 import App from './App.vue'

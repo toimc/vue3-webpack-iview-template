@@ -105,7 +105,8 @@ module.exports = {
   resolve: {
     alias: {
       '@': resolve('src'),
-      vue$: 'vue/dist/vue.esm-bundler.js'
+      vue$: 'vue/dist/vue.esm-bundler.js',
+      'view-design': './src/index'
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue', '.md']
   },

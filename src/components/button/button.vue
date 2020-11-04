@@ -15,6 +15,7 @@
     <span v-if="state.showSlot" ref="slot"><slot></slot></span>
   </component>
 </template>
+
 <script lang="ts">
 import Icon from '../icon'
 import { computed, defineComponent, reactive, inject } from 'vue'
